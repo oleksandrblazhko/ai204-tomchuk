@@ -1,0 +1,12 @@
+@startuml
+
+title Concept Classes Diagram 
+
+Class User
+Class Card
+Class healthCondition
+
+User"1" -- "1"Card: has
+healthCondition"+" *--* "1"Card
+
+@enduml

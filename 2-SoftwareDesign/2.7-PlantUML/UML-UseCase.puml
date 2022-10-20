@@ -1,0 +1,30 @@
+@startuml
+
+title Usecase for Information system
+
+' left to right direction
+
+actor Unregistered
+actor Dancer
+actor :API-tracker:
+
+Unregistered -|> Dancer
+
+rectangle Software {
+
+    usecase (Monitoring your health condition)
+    usecase (Giving access to system settings)
+    usecase (Leaving a record)
+    usecase (User authorising)
+
+    (Leaving a record) .> (User authorising) : include
+    (Giving access to system settings) .> (Monitoring your health condition) : extends
+
+    Unregistered -- (User authorising)
+    Dancer -- (Monitoring your health condition)
+    Dancer -- (Leaving a record)
+    :API-tracker: -- (Giving access to system settings)
+
+}
+
+@enduml

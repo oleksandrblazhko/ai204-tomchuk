@@ -1,0 +1,19 @@
+@startuml
+
+title Activity Diagram 
+
+start
+
+if (The program found several users, satisfying group dances?) then (yes)
+    if (Are the resulting groups suitable?) then (yes)
+        :Displaying matching partners of interest;
+    else (no)
+        :Checking another criterias;
+    endif
+else (no)
+    :No matching partners on request!;
+endif
+
+stop
+
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+
+title Example of Relation Schema
+
+hide circle
+
+entity "User" as us {
+    (PK) idUser
+    --
+    (FK) role
+    name
+    surname
+    balance
+    sex
+    weight
+    height
+    profession
+    (FK) idDance
+    about me
+    interests
+    (FK) idGroup
+}
+
+entity "Card" as cd {
+    (PK) idCard
+    --
+    number
+}
+
+entity "healthCondition" as hc {
+    (PK) idHC
+    --
+    calories
+    pulse
+    pace
+    pressure
+    date
+    (FK) idCard
+}
+
+us -- cd
+cd --{ hc
+
+@enduml
